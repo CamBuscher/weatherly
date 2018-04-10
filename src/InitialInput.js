@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Styles/InitialInput.css'
 
 export default class InitialInput extends Component {
   constructor() {
