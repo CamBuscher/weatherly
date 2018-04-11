@@ -2905,12 +2905,12 @@ const getHourlyForecast = (data) => {
   return parsed;
 }
 
-const today = getCurrentWeather(data)
+const current = getCurrentWeather(data)
 const hourly = getHourlyForecast(data)
 const tenDay = getTenDay(data)
 
 export {
-  today, 
+  current, 
   hourly,
   tenDay
 }

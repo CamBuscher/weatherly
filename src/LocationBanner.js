@@ -1,15 +1,15 @@
 import React from 'react'
 import './Styles/LocationBanner.css'
 
-const LocationBanner = ({today}) => {
-  console.log(today.day)
+const LocationBanner = ({current}) => {
+  console.log(current.day)
   return (
     <div className="bannerContainer">
-      <h1>{today.location}</h1>
+      <h1>{current.location}</h1>
       <ul>
-        <li>{today.day}</li>
-        <li>{today.day}</li>
-        <li>{today.day}</li>
+        <li>{current.day}</li>
+        <li>{current.day}</li>
+        <li>{current.day}</li>
       </ul>
     </div>
   )

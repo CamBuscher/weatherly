@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LocationBanner from './LocationBanner.js'
-import { today, hourly, tenDay } from './api'
+import CurrentWeather from './CurrentWeather.js'
+import { current, hourly, tenDay } from './api'
 import './Styles/WeatherPage.css'
 
 class WeatherPage extends Component {
@@ -15,9 +16,8 @@ class WeatherPage extends Component {
   render() {
     return( 
       <div className="backdrop">
-        <LocationBanner 
-          today={today}
-        />
+        <LocationBanner current={current} />
+        <CurrentWeather current={current} />
       </div>
     )
   }
