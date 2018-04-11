@@ -2909,7 +2909,7 @@ const today = getCurrentWeather(data)
 const hourly = getHourlyForecast(data)
 const tenDay = getTenDay(data)
 
-export default {
+export {
   today, 
   hourly,
   tenDay

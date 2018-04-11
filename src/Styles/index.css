@@ -4,5 +4,6 @@ body {
   font-family: sans-serif;
   background-image: url('../photos/package.jpeg');
   background-size: cover;
+  background-attachment: fixed;
 }
 
