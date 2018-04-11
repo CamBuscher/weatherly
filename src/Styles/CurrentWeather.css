@@ -3,10 +3,26 @@
   grid-column: 1 / 2;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  font-family: 'Oswald', sans-serif;
+  color: whitesmoke;
 }
 
 .leftColumn {
   grid-column: 1 / 2;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+.tempNumber {
+  font-size: 56px;
+}
+
+.summary {
+  font-size: 28px;
 }
 
 img {
@@ -17,4 +33,6 @@ img {
 
 .rightColumn {
   grid-column: 3 / 4;
+  
 }
+

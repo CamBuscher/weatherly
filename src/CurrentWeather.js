@@ -5,13 +5,13 @@ const CurrentWeather = ({current}) => {
   return(
     <div className="currentWeather">
       <div className="leftColumn">
-        <h3>Current temp: {current.temp}</h3>
+        <h3>Current temp:<p className="tempNumber"> {current.temp}°F</p></h3>
         <p className="summary">{current.summary}</p>
       </div>
       <img src="http://icons-ak.wxug.com/i/c/k/clear.gif" />
       <div className="rightColumn"> 
-        <p>Today's high: {current.high}</p>
-        <p>Today's low: {current.low}</p>
+        <h3>Today's high: <p className="tempNumber"> {current.high}</p></h3>
+        <h3>Today's low: <p className="tempNumber">{current.low}</p></h3>
       </div>
     </div>
   )
