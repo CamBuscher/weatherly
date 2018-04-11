@@ -1,0 +1,20 @@
+.currentWeather {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.leftColumn {
+  grid-column: 1 / 2;
+}
+
+img {
+  grid-column: 2 / 3;
+  margin: auto;
+  width: 340px;
+}
+
+.rightColumn {
+  grid-column: 3 / 4;
+}

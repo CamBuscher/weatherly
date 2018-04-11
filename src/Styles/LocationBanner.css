@@ -1,0 +1,21 @@
+.bannerContainer {
+  width: 100%;
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+h1 {
+  margin-top: 0px;
+  color: whitesmoke;
+  font-family: 'Raleway', sans-serif;
+  font-size: 96px;
+}
+
+ul {
+  list-style-type: none;
+  color: whitesmoke;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+}
