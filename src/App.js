@@ -34,8 +34,8 @@ class App extends Component {
     return (
       <div className="App">
         {
-          // this.landingPage()
-          this.weatherInfoPage()
+          this.landingPage()
+          // this.weatherInfoPage()
         }
       </div>
     );
