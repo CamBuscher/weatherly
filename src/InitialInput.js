@@ -10,17 +10,19 @@ export default class InitialInput extends Component {
     }
   }
 
-  render() {
+  render(props) {
     return( 
       <div>
         <input 
           placeholder='Enter your location'
+          type='text'
           onChange={(event) => {
             this.setState({
               userLocationInput: event.target.value
             })
           }}
         />
+        <button>Find my weather</button>
       </div>
     )
   }
