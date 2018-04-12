@@ -8,8 +8,8 @@ const LocationBanner = ({current}) => {
       <h1>{current.location}</h1>
       <ul>
         <li>{current.day}</li>
-        <li>{current.day}</li>
-        <li>{current.day}</li>
+        <li>{current.date}</li>
+        <li>{current.time}</li>
       </ul>
     </div>
   )
