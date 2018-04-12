@@ -2886,7 +2886,8 @@ const getCurrentWeather = (data) => {
     temp: data.current_observation.temp_f,
     feelsLike: data.current_observation.feelslike_f,
     high: data.forecast.simpleforecast.forecastday[0].high.fahrenheit,
-    low: data.forecast.simpleforecast.forecastday[0].low.fahrenheit
+    low: data.forecast.simpleforecast.forecastday[0].low.fahrenheit,
+    icon: data.forecast.txt_forecast.forecastday[0].icon_url
   }
   return parsed;
 }
