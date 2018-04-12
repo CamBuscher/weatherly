@@ -2,7 +2,6 @@ import React from 'react'
 import './Styles/LocationBanner.css'
 
 const LocationBanner = ({current}) => {
-  console.log(current.day)
   return (
     <div className="bannerContainer">
       <h1>{current.location}</h1>
