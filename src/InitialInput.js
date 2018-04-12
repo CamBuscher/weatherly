@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Styles/InitialInput.css'
 
 export default class InitialInput extends Component {
-  constructor() {
+  constructor(props) {
     super();
 
     this.state = {
@@ -10,7 +10,7 @@ export default class InitialInput extends Component {
     }
   }
 
-  render(props) {
+  render() {
     return( 
       <div>
         <input 
@@ -22,7 +22,10 @@ export default class InitialInput extends Component {
             })
           }}
         />
-        <button>Find my weather</button>
+        <button 
+          onClick={() => this.props.updateLocation(this.state.userLocationInput)}>
+          Find my weather
+        </button>
       </div>
     )
   }
