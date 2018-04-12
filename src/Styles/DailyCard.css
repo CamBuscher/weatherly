@@ -1,0 +1,22 @@
+.DailyCard {
+  color: whitesmoke;
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+}
+
+.dailyHigh {
+  color: red;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.dailyLow {
+  color: blue;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.dailyWeatherIcon {
+  height: 36px;
+  padding-top: 10px;
+}

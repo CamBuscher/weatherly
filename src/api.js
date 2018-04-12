@@ -2866,10 +2866,11 @@ const data = {
 const getTenDay = (data) => {
   let parsed = data.forecast.simpleforecast.forecastday.map(dayObj => {
     let dailyDetails = {
-      day: dayObj.date.weekday,
-      date: dayObj.date.pretty.split(' ').slice(4).join(' '),
+      day: dayObj.date.weekday_short,
+      date: dayObj.date.monthname_short + ' ' + dayObj.date.day,
       high: dayObj.high.fahrenheit,
       low: dayObj.low.fahrenheit,
+      icon: dayObj.icon_url,
       conditions: dayObj.conditions
     }
     return dailyDetails
