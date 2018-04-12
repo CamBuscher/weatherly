@@ -7,7 +7,7 @@ const SevenHour = ({hourly}) => {
     return (<HourlyCard hour={hour} key={index}/>)
   })
   return (
-    <div>
+    <div className="hourlyContainer">
       {hourlyDisplay}
     </div>
   )

@@ -2895,7 +2895,7 @@ const getCurrentWeather = (data) => {
 }
 
 const getHourlyForecast = (data) => {
-  let parsed = data.hourly_forecast.splice(0, 8).map(hour => {
+  let parsed = data.hourly_forecast.splice(0, 7).map(hour => {
     let hourlyDetails = {
       time: hour.FCTTIME.civil,
       image: hour.icon_url,

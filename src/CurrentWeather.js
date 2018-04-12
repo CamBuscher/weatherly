@@ -8,7 +8,7 @@ const CurrentWeather = ({current}) => {
         <h3>Current temp:<p className="tempNumber"> {current.temp}°F</p></h3>
         <p className="summary">{current.summary}</p>
       </div>
-      <img src={current.icon} />
+      <img className="currentWeatherImg" src={current.icon} />
       <div className="rightColumn"> 
         <h3>Today's high: <p className="tempNumber"> {current.high}</p></h3>
         <h3>Today's low: <p className="tempNumber">{current.low}</p></h3>
