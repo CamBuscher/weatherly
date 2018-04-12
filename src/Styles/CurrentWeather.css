@@ -5,6 +5,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   font-family: 'Oswald', sans-serif;
   color: whitesmoke;
+  background-color: #ffffff25;
+  border-radius: 25px;
 }
 
 .leftColumn {
@@ -25,10 +27,11 @@ h3 {
   font-size: 28px;
 }
 
-img {
+.currentWeatherImg {
   grid-column: 2 / 3;
   margin: auto;
-  width: 340px;
+  margin-top: 40px;
+  width: 300px;
 }
 
 .rightColumn {

@@ -1,0 +1,9 @@
+.hourlyCard {
+  color: whitesmoke;
+  border-right:1px solid whitesmoke;
+  height: 50%;
+}
+
+.hourlyCard h3 {
+  margin-bottom: 0px;
+}

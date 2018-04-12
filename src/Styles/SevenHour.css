@@ -1,0 +1,10 @@
+.hourlyContainer {
+  box-sizing: border-box;
+  grid-row: 3 / 4;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #ffffff25;
+  border-radius: 25px;
+  height: 95%;
+  margin-top: 5px;
+}
