@@ -14,7 +14,7 @@ export default class InitialInput extends Component {
     return( 
       <div>
         <input 
-          placeholder='Enter your location'
+          placeholder='Enter your location (ex: Denver, CO)'
           type='text'
           onChange={(event) => {
             this.setState({
@@ -23,7 +23,10 @@ export default class InitialInput extends Component {
           }}
         />
         <button 
-          onClick={() => this.props.updateLocation(this.state.userLocationInput)}>
+          onClick={(e) => {
+            e.preventDefault();
+            this.props.updateLocation(this.state.userLocationInput)
+          }}>
           Find my weather
         </button>
       </div>
