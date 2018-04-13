@@ -13,11 +13,17 @@ class App extends Component {
     }
   }
 
+  updateLocation = (location) => {
+    this.setState({ enteredLocation: location })
+  }
+
   landingPage() {
     return (
       <div>
         <WelcomeText />
-        <InitialInput />
+        <InitialInput
+          updateLocation={this.updateLocation} 
+        />
       </div>
     )
   }
@@ -34,8 +40,9 @@ class App extends Component {
     return (
       <div className="App">
         {
-          // this.landingPage()
-          this.weatherInfoPage()
+          this.state.enteredLocation ?
+          this.weatherInfoPage() :
+          this.landingPage()
         }
       </div>
     );

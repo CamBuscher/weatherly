@@ -8,6 +8,7 @@ const HourlyCard = ({hour}) => {
       <h3>{hour.time}</h3>
       <img src={hour.image} />
       <h3>{hour.temp}</h3>
+      <div class="vl"></div>
     </div>
   )
 }

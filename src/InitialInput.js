@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Styles/InitialInput.css'
 
 export default class InitialInput extends Component {
-  constructor() {
+  constructor(props) {
     super();
 
     this.state = {
@@ -15,12 +15,17 @@ export default class InitialInput extends Component {
       <div>
         <input 
           placeholder='Enter your location'
+          type='text'
           onChange={(event) => {
             this.setState({
               userLocationInput: event.target.value
             })
           }}
         />
+        <button 
+          onClick={() => this.props.updateLocation(this.state.userLocationInput)}>
+          Find my weather
+        </button>
       </div>
     )
   }
