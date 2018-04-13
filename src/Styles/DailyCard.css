@@ -1,12 +1,23 @@
 .DailyCard {
+  box-sizing: border-box;
   color: whitesmoke;
   display: grid;
-  grid-template-columns: 40% 20% 40%;
+  grid-template-columns: 50% 20% 30%;
+  background-color: #ffffff25;
+  border-radius: 10px;
+  margin: 4.5px;
+  padding-top: 2.2px;
+}
+
+.DailyCard h5 {
+  font-size: 18px;
+  line-height: 5px;
 }
 
 .dailyHigh {
-  color: red;
-  font-size: 16px;
+  color: rgb(250, 97, 97);
+  font-size: 18px;
+  line-height: 18px;
   display: inline-block;
   margin-top: 10px;
   margin-bottom: 30px;
@@ -14,8 +25,9 @@
 }
 
 .dailyLow {
-  color: blue;
-  font-size: 16px;
+  color: rgb(86, 191, 247);
+  font-size: 18px;
+  line-height: 18px;
   display: inline-block;
   margin-top: 10px;
   margin-bottom: 30px;
