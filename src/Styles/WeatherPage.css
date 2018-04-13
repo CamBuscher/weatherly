@@ -10,3 +10,8 @@
 p {
   margin-top: 0px;
 }
+
+.fahrenheit {
+  font-family: Helvetica, sans-serif, light;
+  font-size: 40px;
+}

@@ -40,9 +40,10 @@ class App extends Component {
     return (
       <div className="App">
         {
-          this.state.enteredLocation ?
-          this.weatherInfoPage() :
-          this.landingPage()
+          this.weatherInfoPage()
+          // this.state.enteredLocation ?
+          // this.weatherInfoPage() :
+          // this.landingPage()
         }
       </div>
     );
