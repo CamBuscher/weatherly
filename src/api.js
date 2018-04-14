@@ -51,8 +51,5 @@ const tenDay = getTenDay
 export {
   getCurrentWeather, 
   getHourlyForecast,
-  getTenDay,
-  current, 
-  hourly, 
-  tenDay
+  getTenDay
 }

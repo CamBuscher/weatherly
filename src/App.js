@@ -17,11 +17,9 @@ class App extends Component {
     }
   }
 
-  updateLocation = (location) => {
-    this.getWeather('denver', 'co')
-  }
-
-  getWeather = (city, stateCode) => {
+  getWeather = (location) => {
+    const city = location.split(', ')[0]
+    const stateCode = location.split(', ')[1]
     const root = `http://api.wunderground.com/api/${apiKey}//`;
     const url = `${root}conditions/geolookup/hourly/forecast10day/q/${stateCode}/${city}.json`;
     fetch(url).then(data => data.json()).then(parsedData => {
@@ -39,7 +37,7 @@ class App extends Component {
       <div>
         <WelcomeText />
         <InitialInput
-          updateLocation={this.updateLocation} 
+          getWeather={this.getWeather} 
         />
       </div>
     )

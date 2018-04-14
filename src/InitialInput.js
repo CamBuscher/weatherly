@@ -25,7 +25,7 @@ export default class InitialInput extends Component {
         <button 
           onClick={(e) => {
             e.preventDefault();
-            this.props.updateLocation(this.state.userLocationInput)
+            this.props.getWeather(this.state.userLocationInput)
           }}>
           Find my weather
         </button>
