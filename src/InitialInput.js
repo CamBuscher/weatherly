@@ -14,7 +14,7 @@ export default class InitialInput extends Component {
     return( 
       <div>
         <input 
-          placeholder='Enter your location (ex: Denver, CO)'
+          placeholder='Enter your city and state (ex: Denver, CO)'
           type='text'
           onChange={(event) => {
             this.setState({
