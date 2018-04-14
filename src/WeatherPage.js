@@ -3,7 +3,6 @@ import LocationBanner from './LocationBanner.js'
 import CurrentWeather from './CurrentWeather.js'
 import SevenHour from './SevenHour.js'
 import TenDay from './TenDay.js'
-import { current, hourly, tenDay } from './api'
 import './Styles/WeatherPage.css'
 
 class WeatherPage extends Component {
@@ -11,17 +10,17 @@ class WeatherPage extends Component {
     super();
 
     this.state = {
-
+      tacos: true
     }
   }
 
   render() {
     return( 
       <div className="backdrop">
-        <LocationBanner current={current} />
-        <CurrentWeather current={current} />
-        <SevenHour hourly={hourly} />
-        <TenDay tenDay={tenDay} />
+        <LocationBanner current={this.props.currentWeather} />
+        <CurrentWeather current={this.props.currentWeather} />
+        <SevenHour hourly={this.props.sevenHour} />
+        <TenDay tenDay={this.props.tenDay} />
       </div>
     )
   }
