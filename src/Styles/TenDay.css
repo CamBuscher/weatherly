@@ -1,4 +1,5 @@
 .tenDayContainer {
+  grid-row: 2 / 4;
   grid-template-rows: repeat(10, 1fr);
   height: 100vh;
 }

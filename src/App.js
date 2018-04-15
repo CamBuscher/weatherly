@@ -50,6 +50,7 @@ class App extends Component {
           currentWeather={state.now}
           sevenHour={state.sevenHour}
           tenDay={state.dailyWeather}
+          getWeather={this.getWeather}
         />
       </div>
     )
