@@ -17,7 +17,9 @@ class WeatherPage extends Component {
   render() {
     return( 
       <div className="backdrop">
-        <LocationBanner current={this.props.currentWeather} />
+        <LocationBanner 
+          current={this.props.currentWeather}
+          getWeather={this.props.getWeather} />
         <CurrentWeather current={this.props.currentWeather} />
         <SevenHour hourly={this.props.sevenHour} />
         <TenDay tenDay={this.props.tenDay} />
