@@ -6,7 +6,7 @@ const HourlyCard = ({hour}) => {
     <div className="hourlyCard">
       <h3>{hour.time}</h3>
       <img src={hour.image} />
-      <h3>{hour.temp}</h3>
+      <h3>{hour.temp} °f</h3>
       <div className="vl"></div>
     </div>
   )
