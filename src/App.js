@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InitialInput from './InitialInput.js'
 import WelcomeText from './WelcomeText.js'
+import ErrorMessage from './ErrorMessage.js'
 import WeatherPage from './WeatherPage.js'
 import apiKey from './apiKey'
 import { getCurrentWeather, getHourlyForecast, getTenDay } from './api.js'
@@ -18,8 +19,8 @@ class App extends Component {
   }
 
   getWeather = (location) => {
-    const city = location.split(' ')[0]||location.split(', ')[0]
-    const stateCode = location.split(' ')[1] || location.split(', ')[1]
+    const city = location.split(', ')[0]
+    const stateCode = location.split(', ')[1]
     const root = `http://api.wunderground.com/api/${apiKey}//`;
     const url = `${root}conditions/geolookup/hourly/forecast10day/q/${stateCode}/${city}.json`;
     fetch(url).then(data => data.json()).then(parsedData => {
@@ -28,11 +29,12 @@ class App extends Component {
           sevenHour: getHourlyForecast(parsedData),
           dailyWeather: getTenDay(parsedData)
       })
-    })
+    }).catch(err =>
+      {alert('Please enter a valid zip code or City, State formatted like "Denver, CO"')}
+    )
   }
 
   landingPage() {
-    
     return (
       <div>
         <WelcomeText />
@@ -42,6 +44,18 @@ class App extends Component {
       </div>
     )
   }
+
+  // errorPage() {
+  //   return (
+  //     <div>
+  //       <WelcomeText />
+  //       <InitialInput
+  //         getWeather={this.getWeather}
+  //       />
+  //       <ErrorMessage />
+  //     </div>
+  //   )
+  // }
 
   weatherInfoPage(state) {
     return(
