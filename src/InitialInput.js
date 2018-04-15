@@ -13,16 +13,19 @@ export default class InitialInput extends Component {
   render() {
     return( 
       <div>
-        <input 
-          placeholder='Enter your city and state (ex: Denver, CO)'
-          type='text'
-          onChange={(event) => {
-            this.setState({
-              userLocationInput: event.target.value
-            })
-          }}
-        />
+        <form id="locationInput">
+          <input 
+            placeholder='Enter city and state, or ZIP code'
+            type='text'
+            onChange={(event) => {
+              this.setState({
+                userLocationInput: event.target.value
+              })
+            }}
+          />
+        </form>
         <button 
+          form="locationInput"
           onClick={(e) => {
             e.preventDefault();
             this.props.getWeather(this.state.userLocationInput)
