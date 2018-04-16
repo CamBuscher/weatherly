@@ -1,16 +1,24 @@
 import React, { Component } from 'react'
 import './Styles/LocationBanner.css'
+import Trie from 'autocomplete';
+import data from './citiesList';
+
+const citiesSuggestions = new Trie();
+citiesSuggestions.populate(data.data)
 
 class LocationBanner extends Component { 
   constructor (props) {
     super ();
 
     this.state = {
-      userLocationInput: null,
+      userLocationInput: '',
     }
   }
 
   render() {
+    citiesSuggestions.suggest(this.state.userLocationInput)
+    const suggestions = citiesSuggestions.suggestions.splice(0, 5).map((suggestion, index) => (<option key={index}>{suggestion}</option>))
+
     return (
       <div className="bannerContainer">
         <div className="locationHeader">
@@ -26,6 +34,7 @@ class LocationBanner extends Component {
         <div className="input-location">
           <form id="weatherInput">
             <input 
+              list="city"
               className="weatherPageInput"
               placeholder="search location" 
               type="text"
@@ -34,6 +43,9 @@ class LocationBanner extends Component {
                 })
               }} 
             />
+          <datalist id="city">
+            {suggestions}
+          </datalist>  
           </form>
           <button 
             className="weatherPageButton"
