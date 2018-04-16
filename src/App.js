@@ -19,7 +19,24 @@ class App extends Component {
     }
   }
 
+  saveLocation = (location) => {
+    const stringifyLocation = JSON.stringify(location)
+    localStorage.setItem('location', stringifyLocation);
+  }
+
+  checkLocalStorage = () => {
+    if (localStorage.location){
+      const retrievedLocation = localStorage.getItem('location')
+      const parsedLocation = JSON.parse(retrievedLocation)
+      console.log('hello')
+      return parsedLocation
+    } else {
+      return false
+    }
+  }
+
   getWeather = (location) => {
+    this.saveLocation(location)
     const city = location.split(', ')[0]
     const stateCode = location.split(', ')[1]
     const root = `http://api.wunderground.com/api/${apiKey}//`;
@@ -74,9 +91,15 @@ class App extends Component {
     )
   }
 
+  componentDidMount() {
+    if (this.checkLocalStorage()) {
+      this.getWeather(this.checkLocalStorage())
+    }
+  }
+
   render() {
     const renderedComponent = this.state.now ? this.weatherInfoPage(this.state)
-                                             : this.landingPage()
+    : this.landingPage()
     
     const validSearch = this.state.invalidLocation ? this.errorPage() : renderedComponent
     
