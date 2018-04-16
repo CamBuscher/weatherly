@@ -7,5 +7,5 @@ body {
   background-attachment: fixed;
   max-width: 1300px;
   text-align: center;
+  min-width: 1200px;
 }
-
