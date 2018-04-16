@@ -10,6 +10,12 @@ export default class InitialInput extends Component {
     }
   }
 
+  updateLocation = (event) => {
+    this.setState({ 
+      userLocationInput: event.target.value
+     })
+  }
+
   render() {
     return( 
       <div>
@@ -17,11 +23,7 @@ export default class InitialInput extends Component {
           <input 
             placeholder='Enter city and state, or ZIP code'
             type='text'
-            onChange={(event) => {
-              this.setState({
-                userLocationInput: event.target.value
-              })
-            }}
+            onChange={this.updateLocation}
           />
         </form>
         <button 
