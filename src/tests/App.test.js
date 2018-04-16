@@ -29,25 +29,33 @@ configure({ adapter: new Adapter() });
   it('should render a weather page app has state', () => {
     const app = shallow(<App />)
     const appState = app.state()
-    app.setState({now: {}, senvenHour: {}, dailyWeather: {}})
+    app.setState({now: {}, sevenHour: {}, dailyWeather: {}})
 
     expect(app.find('WeatherPage').length).toEqual(1)
   })
 
   it('should get weather and render a weather page', () => {
     const app = shallow(<App />)
+    app.getWeather = jest.fn();
     const appState = app.state()
     
-    app.setState({
-      now: null,
-      sevenHour: null,
-      dailyWeather: null,
-      invalidLocation: false  
-    })
-
     app.instance().getWeather('denver, co')
-    expect(app.find('InitialInput').length).toEqual(1)
+    
+    app.setState({ now: {}, sevenHour: {}, dailyWeather: {} })
+
+    expect(app.find('WeatherPage').length).toEqual(1)
   })
+
+  it('should load a weather page if there is something in local storage', () => {
+    const app = shallow(<App />)
+    app.getWeather = jest.fn();
+    const appState = app.state()
+    const localStorage = {'location': 'Denver, CO'}
+
+    expect(app.instance().checkLocalStorage()).toEqual('denver, co')
+  })
+
+  
 
 
 // })
