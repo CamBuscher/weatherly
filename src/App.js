@@ -28,7 +28,6 @@ class App extends Component {
     if (localStorage.location){
       const retrievedLocation = localStorage.getItem('location')
       const parsedLocation = JSON.parse(retrievedLocation)
-      console.log('hello')
       return parsedLocation
     } else {
       return false
@@ -99,7 +98,7 @@ class App extends Component {
 
   render() {
     const renderedComponent = this.state.now ? this.weatherInfoPage(this.state)
-    : this.landingPage()
+                                             : this.landingPage()
     
     const validSearch = this.state.invalidLocation ? this.errorPage() : renderedComponent
     
