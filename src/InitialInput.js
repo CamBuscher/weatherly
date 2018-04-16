@@ -23,7 +23,10 @@ export default class InitialInput extends Component {
 
   render() {
     citiesSuggestions.suggest(this.state.userLocationInput)
-    const suggestions = citiesSuggestions.suggestions.splice(0, 5).map((suggestion, index) => (<option key={index}>{suggestion}</option>))
+    let suggestions = null;
+    if (citiesSuggestions.suggestions) {
+      suggestions = citiesSuggestions.suggestions.splice(0, 5).map((suggestion, index) => (<option key={index}>{suggestion}</option>))
+    }
 
     return( 
       <div>
