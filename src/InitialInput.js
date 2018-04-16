@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import './Styles/InitialInput.css'
+import Trie from 'autocomplete';
+import data from './citiesList';
+
+const citiesSuggestions = new Trie();
+// citiesSuggestions.insert('M')
+// debugger
+citiesSuggestions.populate(data.data)
+console.log(citiesSuggestions)
 
 export default class InitialInput extends Component {
   constructor(props) {
