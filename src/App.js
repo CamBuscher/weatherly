@@ -14,7 +14,8 @@ class App extends Component {
     this.state = {
       now: null,
       sevenHour: null,
-      dailyWeather: null
+      dailyWeather: null,
+      invalidLocation: false
     }
   }
 
@@ -27,11 +28,14 @@ class App extends Component {
         this.setState({
           now: getCurrentWeather(parsedData),
           sevenHour: getHourlyForecast(parsedData),
-          dailyWeather: getTenDay(parsedData)
+          dailyWeather: getTenDay(parsedData),
+          invalidLocation: false
       })
-    }).catch(err =>
-      {alert('Please enter a valid zip code or City, State formatted like "Denver, CO"')}
-    )
+    }).catch(err => {
+      this.setState({
+        invalidLocation: true
+      })
+    })
   }
 
   landingPage() {
@@ -45,17 +49,17 @@ class App extends Component {
     )
   }
 
-  // errorPage() {
-  //   return (
-  //     <div>
-  //       <WelcomeText />
-  //       <InitialInput
-  //         getWeather={this.getWeather}
-  //       />
-  //       <ErrorMessage />
-  //     </div>
-  //   )
-  // }
+  errorPage() {
+    return (
+      <div>
+        <WelcomeText />
+        <InitialInput
+          getWeather={this.getWeather}
+        />
+        <ErrorMessage />
+      </div>
+    )
+  }
 
   weatherInfoPage(state) {
     return(
@@ -71,11 +75,14 @@ class App extends Component {
   }
 
   render() {
-    const renderedComponent = this.state.now ? this.weatherInfoPage(this.state) 
-                                             :this.landingPage()
+    const renderedComponent = this.state.now ? this.weatherInfoPage(this.state)
+                                             : this.landingPage()
+    
+    const validSearch = this.state.invalidLocation ? this.errorPage() : renderedComponent
+    
     return (
       <div className="App">
-        { renderedComponent }
+        { validSearch }
       </div>
     );
   }

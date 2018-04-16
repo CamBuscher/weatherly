@@ -1,11 +1,12 @@
 const getTenDay = (data) => {
   let parsed = data.forecast.simpleforecast.forecastday.map(dayObj => {
+    let iconName = dayObj.icon;
     let dailyDetails = {
       day: dayObj.date.weekday_short,
       date: dayObj.date.monthname_short + ' ' + dayObj.date.day,
       high: dayObj.high.fahrenheit,
       low: dayObj.low.fahrenheit,
-      icon: dayObj.icon_url,
+      icon: `/icons/white/svg/${iconName}.svg`,
       conditions: dayObj.conditions
     }
     return dailyDetails
@@ -14,6 +15,7 @@ const getTenDay = (data) => {
 }
 
 const getCurrentWeather = (data) => {
+  let iconName = data.current_observation.icon
   let parsed = {
     location: data.current_observation.display_location.full,
     condition: data.forecast.simpleforecast.forecastday[0].conditions,
@@ -25,16 +27,17 @@ const getCurrentWeather = (data) => {
     feelsLike: data.current_observation.feelslike_f,
     high: data.forecast.simpleforecast.forecastday[0].high.fahrenheit,
     low: data.forecast.simpleforecast.forecastday[0].low.fahrenheit,
-    icon: data.forecast.txt_forecast.forecastday[0].icon_url
+    icon: `/icons/white/svg/${iconName}.svg`
   }
   return parsed;
 }
 
 const getHourlyForecast = (data) => {
   let parsed = data.hourly_forecast.splice(0, 7).map(hour => {
+    let iconName = hour.icon;
     let hourlyDetails = {
       time: hour.FCTTIME.civil,
-      image: hour.icon_url,
+      image: `/icons/white/svg/${iconName}.svg`,
       temp: hour.temp.english,
       feelsLike: hour.feelslike.english,
       condition: hour.condition
