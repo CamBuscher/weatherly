@@ -4,6 +4,7 @@ import App from '../App';
 import apiKey from '../apiKey'
 import { mount, shallow, configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16';
+require('jest-localstorage-mock');
 configure({ adapter: new Adapter() });
 
 // describe('App testing', () => {
@@ -23,6 +24,29 @@ configure({ adapter: new Adapter() });
     const appState = app.state()
 
     expect(appState.now).toEqual(null)
+  })
+
+  it('should render a weather page app has state', () => {
+    const app = shallow(<App />)
+    const appState = app.state()
+    app.setState({now: {}, senvenHour: {}, dailyWeather: {}})
+
+    expect(app.find('WeatherPage').length).toEqual(1)
+  })
+
+  it('should get weather and render a weather page', () => {
+    const app = shallow(<App />)
+    const appState = app.state()
+    
+    app.setState({
+      now: null,
+      sevenHour: null,
+      dailyWeather: null,
+      invalidLocation: false  
+    })
+
+    app.instance().getWeather('denver, co')
+    expect(app.find('InitialInput').length).toEqual(1)
   })
 
 
