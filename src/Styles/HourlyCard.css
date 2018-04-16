@@ -1,6 +1,7 @@
 .hourlyCard {
   color: whitesmoke;
   height: 50%;
+  padding-top: 5px;
 }
 
 .hourlyCard h3 {
@@ -11,10 +12,18 @@
 .vl {
     border-left: 2px solid whitesmoke;
     height: 125%;
-    margin-top: -125px;
+    margin-top: -105px;
 }
 
 .hourlyCard:nth-child(1) .vl {
   border-left: none;
   height: 0px;
+}
+
+.hourlyImage {
+  width: 25%;
+}
+
+.hourlyTemp {
+  margin-top: 10px;
 }
