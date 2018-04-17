@@ -35,12 +35,13 @@ class App extends Component {
   }
 
   getWeather = (location) => {
-    this.saveLocation(location)
+    
     const city = location.split(', ')[0]
     const stateCode = location.split(', ')[1]
     const root = `http://api.wunderground.com/api/${apiKey}//`;
     const url = `${root}conditions/geolookup/hourly/forecast10day/q/${stateCode}/${city}.json`;
     fetch(url).then(data => data.json()).then(parsedData => {
+        this.saveLocation(location) 
         this.setState({
           now: getCurrentWeather(parsedData),
           sevenHour: getHourlyForecast(parsedData),
@@ -48,6 +49,7 @@ class App extends Component {
           invalidLocation: false
       })
     }).catch(err => {
+      localStorage.clear();
       this.setState({
         invalidLocation: true
       })
