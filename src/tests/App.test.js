@@ -51,6 +51,8 @@ configure({ adapter: new Adapter() });
     app.getWeather = jest.fn();
     const appState = app.state()
     const localStorage = {'location': 'Denver, CO'}
+    app.instance().getWeather('denver, co')
+    app.instance().saveLocation('denver, co')
 
     expect(app.instance().checkLocalStorage()).toEqual('denver, co')
   })
