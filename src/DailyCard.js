@@ -9,7 +9,7 @@ const DailyCard = ({day}) => {
       </div>
       <img className="dailyWeatherIcon" src={day.icon} />
       <div>
-        <h6 className="dailyHigh">{day.high}&nbsp;/&nbsp;</h6>
+        <h6 className="dailyHigh">{day.high}<span className="slash">&nbsp;/&nbsp;</span></h6>
         <h6 className="dailyLow">{day.low}</h6>
       </div>
     </div>

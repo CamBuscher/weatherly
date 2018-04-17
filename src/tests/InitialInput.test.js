@@ -27,4 +27,17 @@ describe('InitialInput', () => {
     expect(wrapper.state('userLocationInput')).toEqual('80212')
   })
 
+  it('should call getWeather with correct argument', () => {
+    const mockFunction = jest.fn();
+    const wrapper = mount(<InitialInput getWeather={ mockFunction } />)
+    const input = wrapper.find('input')
+    input.simulate('change', { target: { value: '80212' } });
+
+    const submitButton = wrapper.find('button')
+    submitButton.simulate('click');
+
+    expect(mockFunction).toHaveBeenCalled();
+    expect(mockFunction).toHaveBeenCalledWith('80212');
+  })
+
 })

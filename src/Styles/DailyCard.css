@@ -15,6 +15,10 @@
   line-height: 5px;
 }
 
+.slash {
+  color: whitesmoke;
+}
+
 .dailyHigh {
   color: rgb(250, 97, 97);
   font-size: 18px;
