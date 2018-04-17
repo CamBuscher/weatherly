@@ -14,4 +14,6 @@ Here are some gifs of the App doing its thing.
 
 [![https://gyazo.com/ced110aa6ebb4790461d6786dcef2889](https://i.gyazo.com/ced110aa6ebb4790461d6786dcef2889.gif)](https://gyazo.com/ced110aa6ebb4790461d6786dcef2889)
 
+### Searching from weather page
+
 [![https://gyazo.com/1fdf02f8721a77af619a0b42e25fc3a4](https://i.gyazo.com/1fdf02f8721a77af619a0b42e25fc3a4.gif)](https://gyazo.com/1fdf02f8721a77af619a0b42e25fc3a4)
